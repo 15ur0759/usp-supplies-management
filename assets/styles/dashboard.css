@@ -1,0 +1,52 @@
+.dashboard-container {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 1em;
+  padding-bottom: 10rem;
+}
+.dashboard-main {
+  width: 100%;
+  overflow: auto;
+
+  display: flex;
+
+  justify-content: start;
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-box {
+  min-width: 40%;
+  margin: 5em 2em;
+  padding: 2em;
+  /* border: 1px solid rgb(201, 201, 206); */
+
+  border-radius: 20px;
+  box-shadow: 1px 4px 6px rgb(228, 228, 255);
+}
+.dashboard-title {
+  margin-bottom: 1em;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.dashboard-links {
+  display: flex;
+  position: absolute;
+
+  padding: 1em;
+}
+.dashboard-link {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1em;
+  margin: 0 0.5em;
+}
+.dashboard-link:hover,
+.dashboard-link-active {
+  color: rgb(76, 76, 255);
+}
+.box-full {
+  width: 100% !important;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./assets/styles/main.css?">
+    <link rel="stylesheet" href="./assets/styles/login.css?">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="main-con">
+        <div class="login-form-container">
+            <div class="login-form">
+                <div class="login-form-header-img ">
+
+                </div>
+                <div class="login-form-header-title text-center">
+                    <div class="login-dept-title">Supplies Management System</div>
+                    <div class="login-campus-title">Urdaneta City Campus</div>
+                </div>
+                <form class="login-form-form p-4" action="">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input required type="text" class="form-control">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label>Password</label>
+                        <input required type="password" class="form-control">
+                    </div>
+                    <div class="form-group mt-4">
+                        <button class="btn btn-primary btn-block">Login<i class="fas fa-angle-double-right ms-2"></i>
+                        </button>
+                    </div>
+                    <div onclick="showAlert()" class="forgot-password">
+                        Forgot password?
+                    </div>
+                </form>
+            </div>
+            <div class="login-form-footer text-center mt-3">
+                &#169; Copyright Protected || All Rights Reserved 2023
+            </div>
+        </div>
+        <div class="svg-container">
+            <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#fcb900" fill-opacity="1"
+                    d="M0,32L48,48C96,64,192,96,288,133.3C384,171,480,213,576,208C672,203,768,149,864,122.7C960,96,1056,96,1152,96C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+</body>
+<script>
+    const showAlert = () => {
+        Swal.fire(
+            'Forgot Password',
+            'Please Contact System Admin, to reset your password',
+            'question'
+        )
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
+</html>

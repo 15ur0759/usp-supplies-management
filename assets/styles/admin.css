@@ -1,0 +1,175 @@
+:root {
+  --yellow: #fcb900;
+  --blue: #0693e3;
+  --navBlue: rgb(72, 72, 255);
+}
+
+.admin-container {
+  min-height: 100vh;
+  display: flex;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: space-between;
+}
+.side-nav {
+  width: 20%;
+  height: 100%;
+  overflow: auto;
+  background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../images/main.jpg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  /* box-shadow: 50px 6px 13px rgb(212, 212, 242); */
+  box-shadow: 50px 60px 130px 130px rgb(212, 212, 242);
+  padding-bottom: 60em;
+  overflow: auto;
+}
+.main {
+  width: 80%;
+  height: 100%;
+
+  position: relative;
+}
+.side-nav-header {
+  height: 200px;
+  width: 100%;
+  padding: 1em;
+}
+.side-nav-header-img {
+  height: 100px;
+  margin-top: 2em;
+  position: relative;
+  background: url("../images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.side-nav-header-text {
+  text-align: center;
+  padding: 1em;
+  padding-top: 0;
+  font-size: 0.8rem !important;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.main-top {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0 4em;
+}
+.notification-container {
+  position: relative;
+}
+.main-notification {
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  position: absolute;
+  width: 200px;
+  min-height: 100px;
+  padding: 1em;
+  margin-top: 3em;
+
+  margin-left: 5em;
+  z-index: 10;
+  box-shadow: 2px 3px 10px rgb(219, 219, 252);
+}
+.main-notification div {
+  display: flex;
+}
+.main-notification div a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+.main-notification div a:hover {
+  color: unset;
+  background: rgb(249, 249, 253);
+}
+.main-bottom {
+  height: 80vh;
+  padding: 2em;
+  display: flex;
+}
+.admin-main-board {
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+.admin-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.dashboard-card {
+  height: 120px;
+  width: 230px;
+  margin-right: 1em;
+  background: white;
+  border-radius: 20px;
+  border-left: 7px solid var(--yellow);
+  display: flex;
+}
+.dashboard-card-left,
+.dashboard-card-right {
+  width: 50%;
+}
+.dashboard-card-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: var(--navBlue);
+}
+.dashboard-card-right {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-right: 1em;
+  flex-direction: column;
+}
+.dashboard-card-right-count {
+  font-size: 2.5em;
+  padding: 0;
+  font-weight: bold;
+}
+.main-bottom-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--yellow);
+  color: var(--navBlue);
+  padding-bottom: 0.5em;
+
+  /* border-radius: 30px; */
+}
+.emp-left {
+  font-size: 3.5em;
+}
+.dashboard-card-right-label {
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: var(--navBlue);
+  font-size: 0.8rem;
+}
+
+/* ======Dashboard========== */
+
+.main-footer {
+  background: white;
+}

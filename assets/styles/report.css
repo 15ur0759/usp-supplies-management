@@ -1,0 +1,32 @@
+.report-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.report-card {
+  width: 250px;
+  height: 150px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 5px 8px 16px rgb(230, 243, 255);
+  margin: 1em;
+  cursor: pointer;
+  border: 1px solid rgb(239, 239, 239);
+  display: flex;
+  color: rgb(84, 84, 94);
+}
+
+.report-card:hover {
+  color: white;
+  background: rgb(103, 103, 227);
+  box-shadow: 15px 18px 26px rgb(209, 233, 255);
+}
+.report-content {
+  margin: auto;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.report-content i {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}

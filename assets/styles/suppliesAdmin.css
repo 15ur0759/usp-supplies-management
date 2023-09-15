@@ -1,0 +1,87 @@
+@import url("./root.css");
+.supplies-card-left {
+  color: #ff7000;
+}
+/* =========categories============== */
+
+.categories-main-section {
+  display: flex;
+}
+.categories-main-left {
+  width: 30%;
+  border-right: 1px solid rgb(191, 190, 190);
+  position: relative;
+}
+.category-img {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: url("../images/categroy.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.categories-main-right {
+  width: 100%;
+  height: 100vh;
+}
+.main-category-header {
+  height: 70px;
+  display: flex;
+  padding: 1em 2em;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-category-header-title {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+.main-category-type {
+  margin-right: 1em;
+  cursor: pointer;
+  padding: 0.1em 0.5em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+.main-category-active,
+.main-category-type:hover {
+  color: var(--blue);
+  border-bottom: 2px solid var(--yellow);
+}
+.main-category-table {
+  padding: 2em;
+  height: 500px;
+  overflow: auto;
+  padding-bottom: 10em;
+}
+.main-category-table table {
+  padding-right: 2em;
+}
+
+.table-control {
+  cursor: pointer;
+  margin: 0 0.2rem;
+}
+
+.table-control-edit:hover {
+  color: var(--yellow);
+}
+.table-control-delete:hover {
+  color: var(--red);
+}
+/* ==============Critical Stocks============== */
+.critical-stocks-main {
+  min-height: 100vh;
+  background: blue;
+}
+.critical-header {
+  min-height: 100px;
+}
+/* .credentials-main-container {
+  overflow: auto;
+  background: red !important;
+} */
