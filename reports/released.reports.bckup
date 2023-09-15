@@ -1,0 +1,148 @@
+<?php
+ require_once('../php/dbConnection.php');
+ require_once('../php/now.php');
+ require_once('../php/sessions.php');
+
+
+if(!isset($_SESSION['userInfo'])){
+    header('location: ../../login.php');
+}
+
+
+if(!isset($_SESSION['releaseFrom']) && !isset($_SESSION['releaseTo'])){
+    header('location: ../../login.php');
+}
+
+$from = $_SESSION['releaseFrom']." 00:00:00";
+$to = $_SESSION['releaseTo']." 23:59:59";
+
+
+$departments = getAllDepartments($conn);
+
+
+function getAllDepartments($conn){
+    return $conn->query("SELECT * FROM department WHERE department_id != '6' AND department_id != '5' ORDER BY department_name");
+}
+
+
+function getAllRequests($conn,$dept,$from,$to){
+    return $conn->query("SELECT * FROM request INNER JOIN user ON user.id = request.requested_by WHERE user.department = '$dept' AND request.request_date >= '$from' AND request.request_date <= '$to' AND request.claim_status=2 ORDER BY request_id");
+}
+
+
+function getItems($conn,$requestId){
+    return $conn->query("SELECT * FROM list INNER JOIN items ON list.item = items.item_id INNER JOIN categories ON items.item_category = categories.cat_id INNER JOIN measurement ON items.measurement = measurement.id INNER JOIN suppliers ON items.supplier = suppliers.supplier_id WHERE list.request_id = '$requestId'");
+}
+
+?>
+
+
+
+ <?php include('../includes/header.php')?>
+ <link rel="stylesheet" href="../assets/styles/releaseStyle.css?">
+
+
+
+<div class="release-report-container shadow">
+      <div class="release-header">
+      </div>
+      <div class="release-header-text text-center mt-5">
+       All Released Report Summary
+      </div>
+     
+      <div class="release-main-section">
+         <div class="release-details-header">
+               <div class="release-details-header-left">
+                  <div class="d-flex">
+                    <div class="rdh me-2">
+                     From:
+                    </div>
+                    <span class="fst-italic"><?=$_SESSION['reportFrom'];?></span>
+                  </div>
+                  <div class="d-flex">
+                    <div class="rdh me-2">
+                     To:
+                    </div>
+                    <span class="fst-italic"><?=$_SESSION['reportTo'];?></span>
+                  </div>
+                  <div class="d-flex">
+                    <div class="rdh me-2">
+                     Date Printed:
+                    </div>
+                    <span class="fst-italic"><?=$now;?></span>
+                  </div>
+                  <div class="d-flex">
+                    <div class="rdh me-2">
+                     Campus:
+                    </div>
+                    <span class="fst-italic">Urdaneta CIty</span>
+                  </div>
+               </div>
+            </div>
+            <?php
+               while($department = $departments->fetch_assoc()){
+
+               
+            ?>
+            
+            <div class="department-container bg-light mt-5 p-2">
+               
+              <div class="departments-header h6 fw-bold bg-dark p-2 text-light"><?=$department['department_name']?></div>
+            <?php
+               $requests = getAllRequests($conn,$department['department_id'],$from,$to);
+               if($requests->num_rows < 1){
+             ?>
+             <div class="p-4 fst-italic">No Requests Found..</div>
+            <?php
+                }else{
+                    while($request = $requests->fetch_assoc()){
+            ?>
+          <div class="report-main-box mt-5 bg-light">
+                <div class="request-box border p-2">
+                    <div class="request-box-header  p-2">
+                        <div class="requested-by">Requested By: <span class="ms-2 fw-bold"><?=$request['firstName']?> <?=$request['lastName']?></span> </div>
+                        <div class="requested-date">Date Requested:<span class="ms-2 fw-bold"><?=$request['request_date']?></span> </div>
+                        <div class="requested-date">Date Released:<span class="ms-2 fw-bold"><?=$request['supplies_response_date']?></span> </div>
+                    </div>
+                    <div class="request-box-table mt-5">
+                        <table id="consumableTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                
+                                <th>Item Code</th>
+                                <th>Description</th>
+                                <th>Qty</th>
+                                <th>Unit/Measurement</th>
+                                <th>Category</th>
+                                <th>Supplier</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <?php
+                               $items = getItems($conn,$request['request_id']);
+                               while($item = $items->fetch_assoc()){
+                             ?>
+                                <tr>
+                                    <td><?=$item['item_code']?></td>
+                                    <td><?=$item['item_description']?></td>
+                                    <td><?=$item['item_quantity']?></td>
+                                    <td><?=$item['measure_description']?></td>
+                                    <td><?=$item['categ_description']?></td>
+                                    <td><?=$item['supplier_name']?></td>
+                                </tr>
+
+                                <?php } ?>
+                        
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+              </div>
+               <?php
+               } }
+            ?>
+               </div>
+               <?php } ?>
+          </div>
+      </div>
+</div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="../assets/styles/main.css?">
+    <link rel="stylesheet" href="../assets/styles/admin.css?">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="admin-container">
+        <div class="side-nav">
+            <div class="side-nav-header">
+                <div class="side-nav-header-img ">
+
+                </div>
+                <div class="side-nav-header-text border-bottom">
+                    <div class="side-nav-header-text-campus">Urdaneta City Campus</div>
+                    <div class="side-nav-header-text-title">Supplies Office</div>
+                </div>
+                <div class="side-nav-links">
+                    <ul>
+                        <li><a class="nav-links-active" href=""><span><i
+                                        class="fas fa-th-large me-3"></i>Dashboard</span>
+                                <span><i class="fas fa-angle-right"></i></span>
+                            </a></li>
+                        <li><a href=""><span><i class="fas fa-poll me-3"></i>Departments</span>
+                                <span><i class="fas fa-angle-right"></i></span>
+                            </a></li>
+                        <li><a href=""><span><i class="fab fa-black-tie me-3"></i>Department Heads</span>
+                                <span><i class="fas fa-angle-right"></i></span>
+                            </a></li>
+                        <li><a href=""><span><i class="fas fa-users me-3"></i>Staff</span>
+                                <span><i class="fas fa-angle-right"></i></span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main bg-light">
+            <div class="main-top my-shadow">
+                <div class="main-bottom-title"><i class="fas fa-th-large me-2"></i>Admin Dashboard</div>
+                <div class="main-top-right">
+                    <div class="main-profile">
+                        <img src="../assets/images/men.jpg" alt="" class="main-profile-img my-shadow">
+                        <div class="ms-2">
+                            <div class="main-profile-name">Juan Cruz</div>
+                            <div class="main-profile-role">Campus Admin</div>
+
+                        </div>
+                    </div>
+                    <div class="main-profile-logout"><a href="">Logout<i class="ms-2 fas fa-sign-out-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-bottom ">
+                <div class="admin-main-board admin-dashboard">
+                    <div class="dashboard-card my-shadow">
+                        <div class="dashboard-card-left">
+                            <i class="fas fa-poll me-3"></i>
+                        </div>
+                        <div class="dashboard-card-right">
+                            <span class="dashboard-card-right-count">10</span>
+                            <div class="dashboard-card-right-label">Departments</div>
+                        </div>
+                    </div>
+                    <div class="dashboard-card my-shadow">
+                        <div class="dashboard-card-left">
+                            <i class="fab fa-black-tie me-3"></i>
+                        </div>
+                        <div class="dashboard-card-right">
+                            <span class="dashboard-card-right-count">10</span>
+                            <div class="dashboard-card-right-label">Dept. Heads</div>
+                        </div>
+                    </div>
+                    <div class="dashboard-card my-shadow">
+                        <div class="dashboard-card-left emp-left">
+                            <i class="fas fa-users me-3"></i>
+                        </div>
+                        <div class="dashboard-card-right">
+                            <span class="dashboard-card-right-count">54</span>
+                            <div class="dashboard-card-right-label">Staff</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
+</html>
